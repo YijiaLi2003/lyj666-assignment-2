@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KMeans Clustering Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>KMeans Clustering Visualization</h1>
+    <div id="controls">
+        <label for="init-method">Initialization Method:</label>
+        <select id="init-method">
+            <option value="random">Random</option>
+            <option value="farthest">Farthest First</option>
+            <option value="kmeans++">KMeans++</option>
+            <option value="manual">Manual</option>
+        </select>
+        <label for="num-clusters">Number of Clusters (k):</label>
+        <input type="number" id="num-clusters" value="3" min="1" max="10">
+        <button id="new-data">Generate New Dataset</button>
+        <button id="reset">Reset</button>
+        <button id="step">Step</button>
+        <button id="converge">Converge</button>
+    </div>
+    <div id="plot"></div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

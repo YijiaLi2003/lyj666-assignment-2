@@ -1,0 +1,109 @@
+/* style.css */
+
+body, h1, p, label, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2.5em;
+}
+
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#controls label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+#controls select,
+#controls input {
+    margin-right: 20px;
+    padding: 7px 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#controls button {
+    margin-right: 10px;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+#controls button:hover {
+    background-color: #2980b9;
+}
+
+#controls button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+#plot {
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    #controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #controls label,
+    #controls select,
+    #controls input,
+    #controls button {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #controls button {
+        margin-right: 0;
+    }
+
+    #plot {
+        height: 400px;
+    }
+}

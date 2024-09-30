@@ -1,0 +1,32 @@
+name: Python application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: make install
+
+    - name: Run the application
+      run: |
+        make run &
+        sleep 10  # Wait for the server to start
+
+    - name: Test the application
+      run: |
+        curl -s http://localhost:3000/ | grep -i "<title>"
